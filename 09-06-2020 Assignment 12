@@ -1,0 +1,15 @@
+#answer 1
+import pandas as pd
+df=pd.read_csv("https://raw.githubusercontent.com/kotagiri-preeti/Summer-Internship-AI-and-ML/master/Match%20(1).csv")   
+
+data1=df["ManOfMach"].value_counts().rename_axis('players').reset_index(name='no. of ManOfMach')
+data2=data1.sort_values(by=['players'],ascending=True,ignore_index=True)
+data2.head(29)
+[9:44 AM, 6/11/2020] Praveen Tdr: #answer 2
+
+# pie plot
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+df["Country_Name"].value_counts()[:10].plot(kind="pie",autopct="%0.1f%%",radius=1.2,colors=["blue","green","red"],explode=[0.2,0,0],startangle=45)
+plt.show()
